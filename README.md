@@ -29,14 +29,16 @@ Run the following command to build the optimized container image:
 `docker build -t akai-extractor .`
 
 #### 3. Run the Extractor
-Mount your local data directory to /data inside the container, and pass the input (-i) and output (-o) flags.
+Mount your local data directory to /data inside the container, and pass the input (`-i`) and output (`-o`) flags.
 
-```docker run --rm -v "$(pwd)/data:/data" akai-extractor \
+```bash
+docker run --rm -v "$(pwd)/data:/data" akai-extractor \
   -i /data/drum_samples.iso \
   -o /data/extracted_drums
   ```
 
-Command Flags
--i, --input (Required): The path to the ISO file inside the container directory.
+Command Flags:
 
--o, --output (Optional): The directory inside the container where files will be extracted. Defaults to /data/extracted.
+`-i, --input` (Required): The path to the ISO file inside the container directory.
+
+`-o, --output` (Optional): The directory inside the container where files will be extracted. Defaults to /data/extracted.
